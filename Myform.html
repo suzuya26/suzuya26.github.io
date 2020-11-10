@@ -18,12 +18,12 @@
 
      var emailaddressVal = $("#UserEmail").val(); //adalah variabel email
      if(emailaddressVal == '') {
-         $("#UserEmail").after('<span class="error">Please enter your email address.</span>'); 
+         $("#UserEmail").after('<span class="error" style="color:Tomato;">Please enter your email address.</span>'); 
          hasError = true; // ini untuk casus ketika kolom submit kosong,makanya menyebabkan variabel has eror menjadi true
      }
 
      else if(!emailReg.test(emailaddressVal)) {
-         $("#UserEmail").after('<span class="error">Enter a valid email address.</span>');
+         $("#UserEmail").after('<span class="error" style="color:Tomato;">Enter a valid email address.</span>');
          hasError = true; //ini untuk casus ketika yang di input adalah yang tidak sesuai,makanya menyebabkan variabel has eror menjadi true
      } 
 

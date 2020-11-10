@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Farhan Septiadi 05211940000057_4-6 Email Validation</title> <!-- untuk judul di web pagenya -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+   $(document).ready(function() {  
+ 
+    $('#btn-submit').click(function() {  //untuk memanggil class submit yang sudah dideclare dibawah
+
+     $(".error").hide();
+     var hasError = false; //untuk variabel penentu eror,dibuat supaya bisa dipanggil dalam berbagai casus
+     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; //adalah varabel yang mendeclare domain untuk email
+
+     var emailaddressVal = $("#UserEmail").val(); //adalah variabel email
+     if(emailaddressVal == '') {
+         $("#UserEmail").after('<span class="error">Please enter your email address.</span>'); 
+         hasError = true; // ini untuk casus ketika kolom submit kosong,makanya menyebabkan variabel has eror menjadi true
+     }
+
+     else if(!emailReg.test(emailaddressVal)) {
+         $("#UserEmail").after('<span class="error">Enter a valid email address.</span>');
+         hasError = true; //ini untuk casus ketika yang di input adalah yang tidak sesuai,makanya menyebabkan variabel has eror menjadi true
+     } 
+
+     if(hasError == true) { return false; }// untuk pengulangan kesalahan penginputan selanjutnya.
+
+ });
+});
+  </script> 
+</head>
+<body>
+
+<div class="container">
+  <h2>Email Validation.</h2> <!-- untuk judul page -->
+  <form method="post" name="form1" action="">
+    <fieldset>
+     <label>Email Address:</label>  <!-- untuk nama formnya -->
+     <input type="text" name="UserEmail" id="UserEmail" value="" size="32" /> <!-- untuk kotak input emailnya -->
+     <br>
+     <input button type="button" class="btn btn-success" value="Submit" id="btn-submit" /> <!-- untuk submit emailnya -->
+    </fieldset>
+  </form>
+</div>
+
+</body> 
+</html>

@@ -1,0 +1,261 @@
+<!--Salsa Putri Islammia 05211940000064-->
+<!--ALGRACEVIAN ANDREA 05211940000056-->
+<!--Farhan Septiadi 05211940000057-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>King Service</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+  p.round3 {
+    border: 2px solid red;
+    border-radius: 12px;
+  }
+</style>
+<script>
+  $(document).ready(function() {  
+
+   $('#btn-submit').click(function() {  //untuk memanggil class submit yang sudah dideclare dibawah
+
+    $(".error").hide();
+    var hasError = false; //untuk variabel penentu eror,dibuat supaya bisa dipanggil dalam berbagai casus
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; //adalah varabel yang mendeclare domain untuk email
+
+    var emailaddressVal = $("#UserEmail").val(); //adalah variabel email
+    if(emailaddressVal == '') {
+        $("#UserEmail").after('<span class="error" style="color:Tomato;">Tolong Masukkan Email Anda.</span>'); 
+        hasError = true; // ini untuk casus ketika kolom submit kosong,makanya menyebabkan variabel has eror menjadi true
+    }
+
+    else if(!emailReg.test(emailaddressVal)) {
+        $("#UserEmail").after('<span class="error" style="color:Tomato;">Tolong Masukkan Email yang sesuai.</span>');
+        hasError = true; //ini untuk casus ketika yang di input adalah yang tidak sesuai,makanya menyebabkan variabel has eror menjadi true
+    } 
+
+  var firstnameVal = $("#FirstName").val();
+  if(firstnameVal == ''){
+  $("#FirstName").after('<span class="error" style="color:Tomato;">Tolong Masukkan Nama Depan Anda.</span>');
+  hasError = true;
+  }
+
+  var lastnameVal = $("#LastName").val();
+  if(lastnameVal == ''){
+  $("#LastName").after('<span class="error" style="color:Tomato;">Tolong Masukkan Nama belakang Anda.</span>');
+  hasError = true;
+  }
+
+  var nohpVal = $("#noHP").val();
+  var nohpreg = /^[0-9]+$/;
+  if(nohpVal == ''){
+  $("#noHP").after('<span class="error" style="color:Tomato;">Tolong Masukkan no Hp/Telp Anda.</span>');
+  hasError = true;
+  }
+  else if(!nohpreg.test(nohpVal)){
+    $("#noHP").after('<span class="error" style="color:Tomato;">Tolong Masukkan no Hp/Telp Anda Yang Benar.</span>');
+    hasError = True;
+  }
+  var alamatVal = $("#alamat").val();
+  if(alamatVal == ''){
+  $("#alamat").after('<span class="error" style="color:Tomato;">Tolong Masukkan Alamat Anda.</span>');
+  hasError = true;
+  }
+
+  var tipeacVal = $("#tipeAC").val();
+  if(tipeacVal == ''){
+  $("#tipeAC").after('<span class="error" style="color:Tomato;">Tolong Masukkan Tipe Series AC Anda.</span>');
+  hasError = true;
+  }
+
+    if(hasError == true) { return false; }// untuk pengulangan kesalahan penginputan selanjutnya.
+});
+});
+ </script> 
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/lomgo.png" style="height:40px; width: auto;">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="servis.html">About Us </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ContactUs.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ourservicesac.html">Our Service</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-6" style="background-color:white;">
+
+        <form>
+          <p class="round3" style="text-align: center; font-size: x-large; color:crimson">Sampaikan Pesanan Service
+            AC-nya Disini</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="FirstName">First Name</label>
+              <input type="text" class="form-control" id="FirstName" placeholder="First name">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="LastName">Last Name</label>
+              <input type="text" class="form-control" id="LastName" placeholder="Last name">
+            </div>
+          </div>
+
+          <br>
+          
+          <div class="form-group">
+            <label for="UserEmail">Email address</label>
+            <input type="email" class="form-control" id="UserEmail" placeholder="name@example.com">
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="noHP">Nomor HP/Telp</label>
+              <input type="text" class="form-control" id="noHP" placeholder="Nomor HP/Telp">
+            </div>
+            <div class="col-sm-6">
+              <label for="alamat">Alamat</label>
+              <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Merk AC</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Daikin</option>
+              <option>LG</option>
+              <option>Samsung</option>
+              <option>Midea</option>
+              <option>Haier</option>
+              <option>Sharp</option>
+              <option>Panasoncic</option>
+              <option>ChangHong</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tipeAC">Tipe Series AC</label>
+            <input type="text" class="form-control" id="tipeAC" placeholder="Misal : LG-XC01">
+          </div>
+
+          <div class="form-group">
+            <label for="deskripsiAC">Deskripsi Kerusakan AC</label>
+            <textarea class="form-control" id="deskripsiAC" rows="3"></textarea>
+          </div>
+
+          <div class="col-auto">
+            <input button type="submit" class="btn btn-danger mb-2 " value="Submit" id="btn-submit"/>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-sm-6" style="background-color:white;">
+        <div class="row">
+          <div class="col">
+            <h3>KENAPA HARUS KING SERVICE AC ?</h3>
+            <br>
+            <p><b>KING SERVICE AC</b> adalah perusahaan jasa perbaikan AC terbaik dan bertanggung jawab. Tentunya, kami
+              memberi
+              pelayanan yang berkualitas, servis cepat dan ekonomis dalam segi biaya. Kami juga menyadari sepenuhnya
+              betapa
+              pentingnya membangun kepercayaan dengan pelanggan, dengan pengalaman puluhan tahun dalam bidang perbaikan
+              (service) AC yang bertanggung jawab dan memberi garansi, maka kami yakin dapat memberikan pelayanan
+              terbaik
+              dan terpercaya untuk Anda.
+            </p>
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <ul>
+              <li>
+                <h5>Tenaga ahli profesional</h5>
+              </li>
+              <li>
+                <h5>Biaya terjangkau</h5>
+              </li>
+              <li>
+                <h5>Pengalaman kerja sejak 1977</h5>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <ul>
+              <li>
+                <h5>Garansi 1 bulan</h5>
+              </li>
+              <li>
+                <h5>Tidak ada biaya ekstra transport</h5>
+              </li>
+              <li>
+                <h5>Layanan yang cepat</h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <b>King Service AC</b> melayani servis berbagai merek dan jenis AC, seperti Daikin, Panasonic, Sharp, Samsung, LG, ChangHong, Midea & Haier dll.
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <p class="round3" style="text-align: center; font-size: x-large; color:crimson">Lowongan Kerja di <i>KING SERVICE AC</i></p>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+        <h6 style="text-align: center;">Jika anda ingin gabung tim teknisi kami, ayo ikuti proses pengajuan lamaran kerjanya yang sangat mudah ini;</h6>
+
+        <div style="background: white none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;">Silahkan menghubungi kami lewat <strong>+62 812 8418 0788</strong> atau email kami di <a href="mailto:kingserviceac1@gmail.com" title="Mail Title"><strong>kingserviceac1@gmail.com</strong> </a>untuk info posisi lowongan kerja.</div>
+
+        <div style="background:white none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;">Anda juga dapat lampirkan Resume / Daftar Riwayat Kerja anda dan kirim ke email kami <strong><a href="mailto:kingserviceac1@gmail.com" title="Mail Title">kingserviceac1@gmail.com</a></strong></div>
+
+       
+      </div>
+    </div>
+  </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="jumbotron text-center" style="margin-bottom:0; background-color: white; margin-top: 50px;">
+        <p style="font-size: small; color: brown; font-weight: bold;">Copyright &#169; 2020 KING SERVICE AC</p>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+    
+  </div>
+
+</div>
+</body>
+
+</html>
